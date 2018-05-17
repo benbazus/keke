@@ -1,0 +1,36 @@
+<ActionBar title="SideDrawer Button">
+    <android>
+        <NavigationButton icon="res://ic_menu" (tap)="showSideDrawer($event)">
+        </NavigationButton>
+    </android>
+    <ios>
+        <ActionItem icon="res://ic_menu" ios.position="left" (tap)="showSideDrawer($event)"></ActionItem>
+    </ios>
+</ActionBar>
+
+ns
+<!-- <label class="s-label" [(ngModel)]="destination" (text)="destination" (tap)="searchDestination()" hint="Where to?"></label> -->
+
+<StackLayout>
+    <!--   <StackLayout row="1" class="searchBar" orientation="vertical" style="padding: 5">
+    <TextField [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField> 
+    </StackLayout>-->
+
+
+    <ContentView height="100%" width="100%">
+        <StackLayout class="form">
+            <TextField style="margin-top: 10;" class="input input-border m-t-5" [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField>
+            <Mapbox alignSelf="center" hideLogo="false" accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="{{ startpointLatitude }}" longitude="{{ startpointLongitude }}" hideCompass="true"
+                zoomLevel="15" showUserLocation="true" disableZoom="false" disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
+            </Mapbox>
+            <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="margin: 5;" (tap)="onBookTap()"></Button>
+
+        </StackLayout>
+    </ContentView>
+
+    <!-- <BottomNavigation activeColor="red" inactiveColor="yellow" backgroundColor="black" keyLineColor="black" (tabSelected)="onBottomNavigationTabSelected($event)" row="4">
+        <BottomNavigationTab title="First" icon="ic_home"></BottomNavigationTab>
+        <BottomNavigationTab title="Second" icon="ic_view_list"></BottomNavigationTab>
+        <BottomNavigationTab title="Third" icon="ic_menu"></BottomNavigationTab>
+    </BottomNavigation> -->
+</StackLayout>

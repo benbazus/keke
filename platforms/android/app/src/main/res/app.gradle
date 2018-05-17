@@ -1,0 +1,25 @@
+// Add your native dependencies here:
+
+// Uncomment to add recyclerview-v7 dependency
+//dependencies {
+//	compile 'com.android.support:recyclerview-v7:+'
+//}
+
+android {  
+
+  //  project.ext {
+  //   googlePlayServicesVersion = "11.4.0"
+  // }
+
+  // project.ext {
+  //   googlePlayServicesVersion = "11.2.+"
+  // }
+  
+  defaultConfig {  
+    generatedDensities = []
+    applicationId = "org.nativescript.UberClient"  
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  }  
+} 

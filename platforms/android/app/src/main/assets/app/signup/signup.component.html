@@ -1,0 +1,29 @@
+<ActionBar title="Profile Store"></ActionBar>
+<StackLayout class="form">
+    <StackLayout class="input-field">
+        <Label text="First Name" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input" [(ngModel)]="input.firstname" autocapitalizationType="none"></TextField>
+        <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label text="Last Name" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input" [(ngModel)]="input.lastname" autocapitalizationType="none"></TextField>
+        <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label text="Email" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input" [(ngModel)]="input.email" autocapitalizationType="none"></TextField>
+        <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label text="Password" class="label font-weight-bold m-b-5"></Label>
+        <TextField class="input" secure="true" [(ngModel)]="input.password" autocapitalizationType="none"></TextField>
+        <StackLayout class="hr-light"></StackLayout>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Button class="btn btn-primary" text="Register" (tap)="register()"></Button>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label text="Login here." [nsRouterLink]="['/login']" class="text-center"></Label>
+    </StackLayout>
+</StackLayout>
