@@ -1,9 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
-import { EventData } from 'data/observable';
+import { EventData, Observable } from 'data/observable';
 //import { ActivatedRoute } from '@angular/router';
 //import { Observable } from "rxjs/Observable";
+
+//import { ObservableProperty } from '~/shared/observable-decorator';
+
 import { Frame, topmost } from "tns-core-modules/ui/frame";
 const topmostFrame: Frame = topmost();
 
@@ -31,6 +34,7 @@ import { Directions } from "nativescript-directions";
 import { GeolocationService } from "~/shared/services/geolocation.service";
 import { GooglePlayService } from "~/shared/services/google-play.service";
 import { Position } from "~/models/locationResponse";
+import { ObservableProperty } from "~/shared/observable-decorator";
 
 
 declare var UIImage: any;
@@ -67,7 +71,7 @@ declare var UIBarMetrics: any;
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  implements OnInit  {
 
 
   origin: any;
@@ -89,10 +93,12 @@ export class HomeComponent implements OnInit {
   public position: Position[];
   
 
-  
-  constructor(private geolocationService: GeolocationService,private _page: Page,
-     private googleService: GooglePlayService) {
 
+  
+  constructor(private geolocationService: GeolocationService,
+    private _page: Page,
+     private googleService: GooglePlayService) {
+ 
       // if (topmost().ios) {
       //   var navigationBar = topmost().ios.controller.navigationBar;
       //   navigationBar.translucent = false;
@@ -104,6 +110,33 @@ export class HomeComponent implements OnInit {
     this._page.actionBarHidden = true;
     geolocation.enableLocationRequest(true);
   }
+
+
+  //=========================== Start Properties =================================
+  private _latitude:number;
+  public get Latitude(): number {
+    console.log("Latitude get reached, and the value is :" + this._latitude);
+    return this._latitude;
+  }
+
+  public set Latitude(value: number) {
+    console.log("Latitude set reached, and the value is :" + value);
+    this._latitude = value;
+  }
+  
+
+  private _longitude:number;
+  public get Longitude(): number {
+    console.log("Longitude get reached, and the value is :" + this._longitude);
+    return this._longitude;
+  }
+
+  public set Longitude(value: number) {
+    console.log("Longitude set reached, and the value is :" + value);
+    this._longitude = value;
+  }
+
+    //=========================== End Properties =================================
 
   ngOnInit() {
     this.directions.available().then(avail => {
@@ -147,12 +180,13 @@ export class HomeComponent implements OnInit {
     geolocation.watchLocation(
       location => {
         console.log(location);
-        this.startpointLatitude = location.latitude;
+       // this.startpointLatitude.set("startpointLatitude", location.latitude);
+        this.startpointLatitude=location.latitude;
         this.startpointLongitude = location.longitude;
+        
+        this.Longitude = location.longitude;
+        this.Latitude= location.latitude;
 
-      //  $set:
-       // this.startpointLatitude = location.latitude;
-      //  this.startpointLongitude = location.longitude;
       },
       e => {
         console.log("failed to get location");
@@ -165,25 +199,25 @@ export class HomeComponent implements OnInit {
     );
   }
 
-   onMapReady(args) {
-     this.mapbox = args.map;
-     var nativeMapView = args.ios ? args.ios : args.android;
-     console.log(
-       "Mapbox onMapReady for " +
-         (args.ios ? "iOS" : "Android") +
-         ", native object received: " +
-         nativeMapView
-     );
-     args.map.addMarkers([
-       {
-         lat: this.startpointLatitude,
-         lng: this.startpointLongitude,
-         title: "You are here",
-         //subtitle: 'Really really nice location',
-         selected: true,
-       }
-     ]);
-   }
+    onMapReady(args) {
+      this.mapbox = args.map;
+      var nativeMapView = args.ios ? args.ios : args.android;
+      console.log(
+        "Mapbox onMapReady for " +
+          (args.ios ? "iOS" : "Android") +
+          ", native object received: " +
+          nativeMapView
+      );
+      args.map.addMarkers([
+        {
+          lat: this.startpointLatitude,
+          lng: this.startpointLongitude,
+          title: "You are here",
+          //subtitle: 'Really really nice location',
+          selected: true,
+        }
+      ]);
+    }
 
 	
   onBookTap() {
@@ -203,7 +237,17 @@ export class HomeComponent implements OnInit {
         console.log("startpointLongitude received: " + location.longitude);
         this.startpointLatitude = location.latitude;
         this.startpointLongitude = location.longitude;
-         this.getCurrentAddress();
+        
+        this.Longitude = location.longitude;
+        this.Latitude= location.latitude;
+        
+        this.mapbox.setCenter({
+          lat: location.latitude,
+          lng: location.longitude,
+          animated: true
+      });
+
+        this.getCurrentAddress();
       })
       .catch(error => {
         console.log("Location error received: " + error);
@@ -234,39 +278,39 @@ export class HomeComponent implements OnInit {
     // Show sidedrawer ...
 }
 
-//   public onMapReady(args) {
-//     this.mapbox = args.map;
-//     this.geolocationService.getLocation().then(() => {
-//         this.loadInitalLocation().then(
-//             photos => {
-//                 this.position = photos.map((photo) => {
-//                     photo.distance = this.geolocationService.getDistanceFrom(
-//                         parseFloat(photo.latitude),
-//                         parseFloat(photo.longitude));
-//                     return photo;
-//                 });
-//                 this.dropMarkers();
-//                 this.mapbox.setCenter({
-//                     lat: this.geolocationService.latitude,
-//                     lng: this.geolocationService.longitude,
-//                     animated: true
-//                 });
-//             },
-//             error => console.log(error));
-//         });
-// }
+   public rrrrrrrronMapReady(args) {
+     this.mapbox = args.map;
+     this.geolocationService.getLocation().then(() => {
+         this.loadInitalLocation().then(
+          loc => {
+                 this.position = loc.map((loc) => {
+                  loc.distance = this.geolocationService.getDistanceFrom(
+                         parseFloat(loc.latitude),
+                         parseFloat(loc.longitude));
+                     return loc;
+                 });
+                 this.dropMarkers();
+                 this.mapbox.setCenter({
+                     lat: this.geolocationService.latitude,
+                     lng: this.geolocationService.longitude,
+                     animated: true
+                 });
+             },
+             error => console.log(error));
+         });
+ }
 
-// public dropMarkers() {
-//   let markers = this.position.map((photo: Position, index: number) => {
-//       return {
-//           lat: photo.latitude,
-//           lng: photo.longitude,
-//       }
-//   });
-//   this.mapbox.addMarkers(markers);
-// }
+ public dropMarkers() {
+   let markers = this.position.map((loc: Position, index: number) => {
+       return {
+           lat: loc.latitude,
+           lng: loc.longitude,
+       }
+   });
+   this.mapbox.addMarkers(markers);
+ }
 
-//   public loadInitalLocation() {
-//     return this.googleService.getCurrentLocation(this.geolocationService.latitude, this.geolocationService.longitude);
-//   }
+   public loadInitalLocation() {
+     return this.googleService.getCurrentLocation(this.geolocationService.latitude, this.geolocationService.longitude);
+   }
 }

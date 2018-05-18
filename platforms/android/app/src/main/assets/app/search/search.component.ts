@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
-//import { EventData } from 'data/observable';
+import { EventData, Observable } from 'data/observable';
+import { ObservableProperty } from '~/shared/observable-decorator';
 //import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./search/search.component.css']
 })
 
-export class SearchComponent implements OnInit {
+export class SearchComponent extends Observable implements OnInit  {
 
-	constructor() { }
+	@ObservableProperty()
+	public message: string;
+	
+	constructor() {
+		super();
+	 }
 
-	ngOnInit() { }
+	ngOnInit() {
+
+	// 	this.isLoading= true;
+	// 	this.isAnonymous = BackendService.isAnonymous;
+	// 	this.sub$ = this.route.params;
+	// 	this.articles$ = this.sub$.switchMap((params: any) =&#x3E; {
+	// 								this.categoryTitle = params[&#x27;categoryTitle&#x27;];
+	// 								return &#x3C;any&#x3E;this.firebaseService.getArticleList(params[&#x27;id&#x27;])});&#x9;
+	//    this.articles$.subscribe(()=&#x3E;{
+	// 			 this.isLoading= false;
+	//    });
+	 }
 }
