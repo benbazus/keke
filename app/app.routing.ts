@@ -6,11 +6,13 @@ import { HomeComponent } from "~/home/home.component";
 import { LoginComponent } from "~/login/login.component";
 import { SearchComponent } from "~/search/search.component";
 import { SignupComponent } from "~/signup/signup.component";
+import { BookingComponent } from "~/booking/booking.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
   //  { path: "", redirectTo: "/items", pathMatch: "full" },
-    { path: "home", component: HomeComponent },    
+  { path: "booking", component: BookingComponent },  
+      { path: "home", component: HomeComponent },    
     { path: "login", component: LoginComponent },
     { path: "search", component: SearchComponent },
     { path: "signup", component: SignupComponent },

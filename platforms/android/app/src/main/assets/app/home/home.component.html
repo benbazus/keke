@@ -17,7 +17,10 @@
 
 
 <StackLayout class="form">
-    <TextField style="margin-top: 10;" class="input input-border m-t-5" [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField>
+   <!-- <TextField style="margin-top: 10;" class="input input-border m-t-5" [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField> -->
+    
+    <label class="s-label" [(ngModel)]="destination" (text)="destination" (tap)="searchDestination()" hint="Where to?"></label>
+   
     <Mapbox alignSelf="center" hideLogo="false" accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="{{ Latitude }}" longitude="{{ Longitude }}" hideCompass="true" zoomLevel="15"
         showUserLocation="true" disableZoom="false" disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
     </Mapbox>

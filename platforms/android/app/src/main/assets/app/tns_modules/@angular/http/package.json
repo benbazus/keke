@@ -2,7 +2,7 @@
   "_args": [
     [
       "@angular/http@5.2.11",
-      "D:\\tmp\\UberClient"
+      "D:\\tmp\\keke"
     ]
   ],
   "_from": "@angular/http@5.2.11",
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@angular/http/-/http-5.2.11.tgz",
   "_spec": "5.2.11",
-  "_where": "D:\\tmp\\UberClient",
+  "_where": "D:\\tmp\\keke",
   "author": {
     "name": "angular"
   },

@@ -1,16 +1,19 @@
-<!-- <ListView [items]="articles$ | async">
-            <template let-item="item">                  
-                <GridLayout>
-                    <GridLayout columns="auto,*,auto" class="card">
-                        <Image class="m-5" horizontalAlignment="left" col="0" width="40" height="40" [src]="item.imagepath.length>0 ? item.imagepath : '~/assets/camera.png'"></Image>
-                        <Label class="m-5"  (tap)="viewDetail(item.id, categoryTitle)" col="1" [text]='item.title'></Label>
-                        <Label class="m-10 font-awesome"   style="color:black;" col="2" text='&#xf15c;'></Label>
-                    </GridLayout>                 
-                </GridLayout>
-            </template>
+
+<ActionBar title="Search Location" color="white">
+    <NavigationButton (tap)="onNavBtnTap()" text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+      <StackLayout aria-orientation="vertical">
+        <SearchBar (textChange)="onOriginTap($event)" hint="Your Location" textFieldHintColor="#DEDEDE" [text]="origin"  [(ngModel)]="origin" (clear)="onOriginClear" class="search-bar"></SearchBar>
+        <SearchBar (textChange)="onDestinationTap($event)" hint="Enter Pick Location" textFieldHintColor="#DEDEDE" [text]="destination"  [(ngModel)]="destination"class="search-bar"></SearchBar>
+    </StackLayout>
+</ActionBar>
+
+<StackLayout style="margin-top: 5px;" class="page">  
+    <ListView style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
+        <ng-template let-item="item">
+            <GridLayout style="padding: 10px" rows="*" columns="*,*">
+                <Image col="0" row="0"  stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
+                <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
+            </GridLayout>
+        </ng-template>
     </ListView>
-    <StackLayout class="dimmer" visibility="">
-               <GridLayout rows="*" visibility="">
-                       <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" row="1" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>    
-               </GridLayout>
-    </StackLayout> -->
+</StackLayout>

@@ -23,8 +23,9 @@ container {
 Mapbox {}
 
 .s-label {
-    background-color: rgb(209, 204, 202);
+    /* background-color: transparent; */
     border-radius: 5;
+    width: 50;
     padding: 5;
     color: white;
     font-family: FontAwesome;

@@ -2,7 +2,7 @@
   "_args": [
     [
       "rxjs@5.5.10",
-      "D:\\tmp\\UberClient"
+      "D:\\tmp\\keke"
     ]
   ],
   "_from": "rxjs@5.5.10",
@@ -22,11 +22,12 @@
     "fetchSpec": "5.5.10"
   },
   "_requiredBy": [
-    "/"
+    "/",
+    "/kinvey-nativescript-sdk"
   ],
   "_resolved": "https://registry.npmjs.org/rxjs/-/rxjs-5.5.10.tgz",
   "_spec": "5.5.10",
-  "_where": "D:\\tmp\\UberClient",
+  "_where": "D:\\tmp\\keke",
   "author": {
     "name": "Ben Lesh",
     "email": "ben@benlesh.com"

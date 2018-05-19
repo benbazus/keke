@@ -2,7 +2,7 @@
   "_args": [
     [
       "nativescript-geolocation@4.2.6",
-      "D:\\tmp\\UberClient"
+      "D:\\tmp\\keke"
     ]
   ],
   "_from": "nativescript-geolocation@4.2.6",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-geolocation/-/nativescript-geolocation-4.2.6.tgz",
   "_spec": "4.2.6",
-  "_where": "D:\\tmp\\UberClient",
+  "_where": "D:\\tmp\\keke",
   "author": {
     "name": "NativeScript Team"
   },

@@ -1,5 +1,9 @@
 [
     {
+        "name": "kinvey-nativescript-sdk",
+        "directory": "..\\..\\node_modules\\kinvey-nativescript-sdk"
+    },
+    {
         "name": "nativescript-angular",
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },
@@ -14,6 +18,10 @@
     {
         "name": "nativescript-mapbox",
         "directory": "..\\..\\node_modules\\nativescript-mapbox"
+    },
+    {
+        "name": "nativescript-sqlite",
+        "directory": "..\\..\\node_modules\\nativescript-sqlite"
     },
     {
         "name": "nativescript-theme-core",

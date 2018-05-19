@@ -11,7 +11,13 @@ import { SignupComponent } from '~/signup/signup.component';
 import { SearchComponent } from '~/search/search.component';
 import { ChatComponent } from '~/chat/chat.component';
 import { GooglePlayService } from '~/shared/services/google-play.service';
+import { UserService } from '~/shared/services/user.service';
+import { BookingComponent } from '~/booking/booking.component';
 
+
+import { registerElement } from "nativescript-angular/element-registry";
+import { ModalComponent } from '~/booking/modal.component';
+registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 
 @NgModule({
     bootstrap: [
@@ -29,11 +35,14 @@ import { GooglePlayService } from '~/shared/services/google-play.service';
         HomeComponent,
         LoginComponent,
         ChatComponent,
-        SearchComponent
+        BookingComponent,
+        SearchComponent,
+        ModalComponent
     ],
     providers: [
          GeolocationService,
-         GooglePlayService
+         GooglePlayService,
+         UserService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

@@ -4,10 +4,12 @@ ADDED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:2:1-53
 INJECTED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:2:1-53:12
 INJECTED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:2:1-53:12
 INJECTED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:2:1-53:12
-MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:2:1-5:12
+MERGED from [com.orhanobut:hawk:2.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\hawk-2.0.1.aar\d84dd86cc61b3c9f8b4e44f255986c24\AndroidManifest.xml:2:1-8:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.5.0.aar\8d6659248aa50b5916411426bb0062b7\AndroidManifest.xml:2:1-10:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-6.0.1.aar\fac08fcb4b3a71f2c1d8d03886463dcd\AndroidManifest.xml:2:1-20:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.10] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.10.aar\9fdbd75aa88c9490532c3358c8c4b1ea\AndroidManifest.xml:2:1-14:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:2:1-5:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\958d816e4f1bce0792081804d5c669a3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:design:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\60c7902fb14fefc9e584aa8d819d9c25\AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.android.gms:play-services-base:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-base-11.4.0.aar\cdb9ca1563202f9618de47c46c524997\AndroidManifest.xml:16:1-21:12
@@ -16,7 +18,6 @@ MERGED from [com.google.android.gms:play-services-basement:11.4.0] C:\Users\bubo
 MERGED from [com.android.support:transition:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\transition-25.3.1.aar\8ed0fcee1241db8582c26d862f49243f\AndroidManifest.xml:17:1-28:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.2.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-gestures-0.2.0.aar\b9915a741dca4ba09f43a8cbd9fcbf92\AndroidManifest.xml:2:1-11:12
 MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:2:1-34:12
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:2:1-19:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-core-0.2.0.aar\7a7bade067917276efcf8384f145c511\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\1b64c38c6f162eff450cfe2a9ecb90ab\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\519f072ebb810419e73db55fd61a4aaf\AndroidManifest.xml:17:1-31:12
@@ -24,6 +25,7 @@ MERGED from [:nativescript-optimized:] C:\Users\buboegbu\.gradle\caches\transfor
 MERGED from [:nativescript_geolocation:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\nativescript_geolocation.aar\32d72a6fbebc5b0e04800e1100458a04\AndroidManifest.xml:2:1-11:12
 MERGED from [:nativescript_mapbox:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\nativescript_mapbox.aar\48a9a3bc82b8d2b40b5039a6f059f4a9\AndroidManifest.xml:2:1-16:12
 MERGED from [:widgets-release:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\aa2d5fbfcc783eda7d7dae817b78e3fc\AndroidManifest.xml:2:1-14:12
+MERGED from [com.facebook.conceal:conceal:1.1.3] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\conceal-1.1.3.aar\726625069ca65650d11dcedbf67660f9\AndroidManifest.xml:7:1-16:12
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\d1e0ac519def7b47d2d5250cd265fc98\AndroidManifest.xml:17:1-26:12
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\17c9ac560c962df2e9d931c6090667ff\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\80d35222f2308dff2529b6a8562aa9b5\AndroidManifest.xml:17:1-22:12
@@ -67,14 +69,18 @@ uses-sdk
 ADDED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:13:2-15:34
 INJECTED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:13:2-15:34
 INJECTED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:13:2-15:34
-MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:3:5-43
+MERGED from [com.orhanobut:hawk:2.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\hawk-2.0.1.aar\d84dd86cc61b3c9f8b4e44f255986c24\AndroidManifest.xml:6:5-44
+MERGED from [com.orhanobut:hawk:2.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\hawk-2.0.1.aar\d84dd86cc61b3c9f8b4e44f255986c24\AndroidManifest.xml:6:5-44
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.5.0.aar\8d6659248aa50b5916411426bb0062b7\AndroidManifest.xml:6:5-8:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-plugin-locationlayer:0.5.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-plugin-locationlayer-0.5.0.aar\8d6659248aa50b5916411426bb0062b7\AndroidManifest.xml:6:5-8:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-6.0.1.aar\fac08fcb4b3a71f2c1d8d03886463dcd\AndroidManifest.xml:5:5-7:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-6.0.1.aar\fac08fcb4b3a71f2c1d8d03886463dcd\AndroidManifest.xml:5:5-7:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.10] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.10.aar\9fdbd75aa88c9490532c3358c8c4b1ea\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-services:2.2.10] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-services-2.2.10.aar\9fdbd75aa88c9490532c3358c8c4b1ea\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:11:5-13:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:11:5-13:41
+MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:3:5-43
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\958d816e4f1bce0792081804d5c669a3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\958d816e4f1bce0792081804d5c669a3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\60c7902fb14fefc9e584aa8d819d9c25\AndroidManifest.xml:21:5-23:62
@@ -91,8 +97,6 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.2.0] C:\Users\buboeg
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.2.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-gestures-0.2.0.aar\b9915a741dca4ba09f43a8cbd9fcbf92\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:5:5-7:41
 MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:5:5-7:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:11:5-13:41
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:11:5-13:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-core-0.2.0.aar\7a7bade067917276efcf8384f145c511\AndroidManifest.xml:7:5-9:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-core-0.2.0.aar\7a7bade067917276efcf8384f145c511\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\1b64c38c6f162eff450cfe2a9ecb90ab\AndroidManifest.xml:21:5-23:78
@@ -107,6 +111,8 @@ MERGED from [:nativescript_mapbox:] C:\Users\buboegbu\.gradle\caches\transforms-
 MERGED from [:nativescript_mapbox:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\nativescript_mapbox.aar\48a9a3bc82b8d2b40b5039a6f059f4a9\AndroidManifest.xml:7:5-47
 MERGED from [:widgets-release:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\aa2d5fbfcc783eda7d7dae817b78e3fc\AndroidManifest.xml:7:5-9:41
 MERGED from [:widgets-release:] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\aa2d5fbfcc783eda7d7dae817b78e3fc\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.conceal:conceal:1.1.3] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\conceal-1.1.3.aar\726625069ca65650d11dcedbf67660f9\AndroidManifest.xml:12:5-14:41
+MERGED from [com.facebook.conceal:conceal:1.1.3] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\conceal-1.1.3.aar\726625069ca65650d11dcedbf67660f9\AndroidManifest.xml:12:5-14:41
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\d1e0ac519def7b47d2d5250cd265fc98\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\d1e0ac519def7b47d2d5250cd265fc98\AndroidManifest.xml:20:5-43
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\17c9ac560c962df2e9d931c6090667ff\AndroidManifest.xml:20:5-44
@@ -201,6 +207,8 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1] C:\Users\buboegbu\.g
 		ADDED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:28:21-72
 application
 ADDED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:30:2-52:16
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:15:5-17:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:15:5-17:19
 MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-location:11.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\play-services-location-11.4.0.aar\76e7052ceedda084820a8b114af2ff5c\AndroidManifest.xml:4:5-19
 MERGED from [com.android.support:design:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\60c7902fb14fefc9e584aa8d819d9c25\AndroidManifest.xml:29:5-20
@@ -215,8 +223,6 @@ MERGED from [com.android.support:transition:25.3.1] C:\Users\buboegbu\.gradle\ca
 MERGED from [com.android.support:transition:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\transition-25.3.1.aar\8ed0fcee1241db8582c26d862f49243f\AndroidManifest.xml:26:5-20
 MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:21:5-32:19
 MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:21:5-32:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:15:5-17:19
-MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:15:5-17:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\1b64c38c6f162eff450cfe2a9ecb90ab\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.4.0.aar\1b64c38c6f162eff450cfe2a9ecb90ab\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:support-v4:25.4.0] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\support-v4-25.4.0.aar\519f072ebb810419e73db55fd61a4aaf\AndroidManifest.xml:25:5-29:19
@@ -302,6 +308,10 @@ MERGED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\tra
 		MERGED from D:\tmp\keke\platforms\android\app\src\main\AndroidManifest.xml:12:5-14:36
 	android:name
 		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-sdk-6.0.1.aar\fac08fcb4b3a71f2c1d8d03886463dcd\AndroidManifest.xml:13:9-45
+service#com.mapbox.android.telemetry.TelemetryService
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:16:9-81
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:16:18-78
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\60c7902fb14fefc9e584aa8d819d9c25\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:transition:25.3.1] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\transition-25.3.1.aar\8ed0fcee1241db8582c26d862f49243f\AndroidManifest.xml:22:5-24:34
@@ -384,7 +394,3 @@ service#com.mapzen.android.lost.internal.DwellIntentService
 ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:30:9-31:19
 	android:name
 		ADDED from [com.mapzen.android:lost:3.0.4] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\lost-3.0.4.aar\16e0479c48eb3ba01f7bca9540261a89\AndroidManifest.xml:30:18-84
-service#com.mapbox.android.telemetry.TelemetryService
-ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:16:9-81
-	android:name
-		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.2] C:\Users\buboegbu\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-3.0.2.aar\8f0317af0165e1250fa364c96dbb3e93\AndroidManifest.xml:16:18-78

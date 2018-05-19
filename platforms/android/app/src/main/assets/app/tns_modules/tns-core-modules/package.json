@@ -2,7 +2,7 @@
   "_args": [
     [
       "tns-core-modules@4.0.0",
-      "D:\\tmp\\UberClient"
+      "D:\\tmp\\keke"
     ]
   ],
   "_from": "tns-core-modules@4.0.0",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-4.0.0.tgz",
   "_spec": "4.0.0",
-  "_where": "D:\\tmp\\UberClient",
+  "_where": "D:\\tmp\\keke",
   "dependencies": {
     "tns-core-modules-widgets": "4.0.0"
   },

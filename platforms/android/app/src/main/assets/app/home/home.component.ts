@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, NgZone, OnInit } from "@angular/core";
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 import { EventData, Observable } from 'data/observable';
@@ -28,8 +28,9 @@ import {
 import * as geolocation from "nativescript-geolocation";
 import { Accuracy } from "ui/enums";
 
-import { registerElement } from "nativescript-angular/element-registry";
-registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
+//import { registerElement } from "nativescript-angular/element-registry";
+//registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
+
 import { Directions } from "nativescript-directions";
 import { GeolocationService } from "~/shared/services/geolocation.service";
 import { GooglePlayService } from "~/shared/services/google-play.service";
@@ -95,7 +96,8 @@ export class HomeComponent  implements OnInit  {
 
 
   
-  constructor(private geolocationService: GeolocationService,
+  constructor(private zone: NgZone,
+  private geolocationService: GeolocationService,
     private _page: Page,
      private googleService: GooglePlayService) {
  

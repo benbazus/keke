@@ -1,27 +1,32 @@
 {
-  "_from": "nativescript-mapbox@^4.0.0",
+  "_args": [
+    [
+      "nativescript-mapbox@4.0.0",
+      "D:\\tmp\\keke"
+    ]
+  ],
+  "_from": "nativescript-mapbox@4.0.0",
   "_id": "nativescript-mapbox@4.0.0",
   "_inBundle": false,
   "_integrity": "sha1-KhDfo821WIGO3ni5crSbdpR+jWU=",
   "_location": "/nativescript-mapbox",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "nativescript-mapbox@^4.0.0",
+    "raw": "nativescript-mapbox@4.0.0",
     "name": "nativescript-mapbox",
     "escapedName": "nativescript-mapbox",
-    "rawSpec": "^4.0.0",
+    "rawSpec": "4.0.0",
     "saveSpec": null,
-    "fetchSpec": "^4.0.0"
+    "fetchSpec": "4.0.0"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-mapbox/-/nativescript-mapbox-4.0.0.tgz",
-  "_shasum": "2a10dfa3cdb558818ede78b972b49b76947e8d65",
-  "_spec": "nativescript-mapbox@^4.0.0",
-  "_where": "D:\\tmp\\UberClient",
+  "_spec": "4.0.0",
+  "_where": "D:\\tmp\\keke",
   "author": {
     "name": "Eddy Verbruggen",
     "email": "eddyverbruggen@gmail.com"
@@ -29,8 +34,6 @@
   "bugs": {
     "url": "https://github.com/eddyverbruggen/nativescript-mapbox/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Native Maps, by Mapbox.",
   "devDependencies": {
     "tns-core-modules": "~4.0.0",
