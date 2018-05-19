@@ -2,6 +2,8 @@ D:\tmp\keke\platforms\android\app\src\main\assets\app\app.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\app.module.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\app.routing.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\booking\booking.component.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\booking\modal.component.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\booking\model.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\chat\chat.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\home\home.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\login\login.component.js
@@ -89,8 +91,10 @@ D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-a
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\view-util.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\zone-js\dist\zone-nativescript.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-appavailability\appavailability.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-appversion\appversion.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-directions\directions.common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-directions\directions.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-email\email.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-geolocation\geolocation.common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-geolocation\geolocation.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\index.js
@@ -98,8 +102,12 @@ D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-i
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-mapbox\mapbox.common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-mapbox\mapbox.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ngx-fonticon\nativescript-ngx-fonticon.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ngx-fonticon\pipes\fonticon.pipe.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ngx-fonticon\services\fonticon.service.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-permissions\permissions.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-sqlite\sqlite.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-telephony\telephony.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application-common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application-settings\application-settings-common.js

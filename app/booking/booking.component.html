@@ -2,10 +2,12 @@
     <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
         <Label text="Tax Application" class="action-title"></Label>
     </StackLayout>
-    <ActionItem (tap)="" ios.position="right">
+    <ActionItem (tap)="searchDestination()" ios.position="right">
           <Button class="font-awesome action-item label" text="&#xf124;"></Button>
     </ActionItem>
 </ActionBar>
+
+
 
 
 
@@ -21,11 +23,10 @@
 
 -->
 
-<StackLayout>
-    <TextField style="margin-top: 10;" class="input input-border m-t-5" [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField>
+   <ContentView id="map"  row="2" height="100%" width="100%" style="margin: 3; border-color: #fff">  
 
     <Mapbox accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="50.467735" longitude="13.427718" hideCompass="true" zoomLevel="10" showUserLocation="false" disableZoom="false"
         disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
     </Mapbox>
     <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="margin: 5; height: 40;" (tap)="onBookTap()"></Button>
-</StackLayout>
+</ContentView>

@@ -1,4 +1,4 @@
-<ActionBar title="SideDrawer Button">
+<!-- <ActionBar title="SideDrawer Button">
     <android>
         <NavigationButton icon="res://ic_menu" (tap)="showSideDrawer($event)">
         </NavigationButton>
@@ -6,24 +6,43 @@
     <ios>
         <ActionItem icon="res://ic_menu" ios.position="left" (tap)="showSideDrawer($event)"></ActionItem>
     </ios>
+</ActionBar> -->
+
+<ActionBar class="action-bar">
+    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
+        <Label text="Tax Application" class="action-title"></Label>
+    </StackLayout>
 </ActionBar>
 
-<!-- <label class="s-label" [(ngModel)]="destination" (text)="destination" (tap)="searchDestination()" hint="Where to?"></label> -->
+<StackLayout orientation="horizontal" style="height: 40; width: 200; margin-top: 550;" *ngIf="!currentGeoLocation">
+     <Button text="Turn on location service" (tap)="enableLocationServices()"></Button>
+</StackLayout>
 
-<!--   <StackLayout row="1" class="searchBar" orientation="vertical" style="padding: 5">
-    <TextField [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField> 
-    </StackLayout>-->
+<!--    <label style="margin-top:10px; padding-top: 10px; width: 80px;" class="s-label" [(ngModel)]="destination" (text)="destination" (tap)="searchDestination()" hint="Where to?"></label>
+
+<StackLayout class="form" *ngIf="currentGeoLocation">-->
+ <!--  <Button  text="Where to?" style="height: 40; width: 250; margin-bottom: 500;" (tap)="onBookTap()"></Button>
+    <SearchBar hint="Where to?" [text]="searchPhrase" (submit)="onSearchSubmit($event)" class="actionBar"></SearchBar>-->
+
+ <TextField [(ngModel)]="origin" editable="false" (tap)="onStartBookingTap()" hint="Where too?" class="textField"></TextField>
 
 
 
-<StackLayout class="form">
-   <!-- <TextField style="margin-top: 10;" class="input input-border m-t-5" [(ngModel)]="destination" editable="false" (tap)="searchDestination()" hint="Where to?"></TextField> -->
-    
-    <label class="s-label" [(ngModel)]="destination" (text)="destination" (tap)="searchDestination()" hint="Where to?"></label>
-   
+<!--
+      <SearchBar hint="Where to?" [text]="searchPhrase" (submit)="onSearchSubmit($event)" style="height: 40; width: 250; margin-bottom: 300;"></SearchBar>
+-->
+     <ContentView id="map"  row="2" height="100%" width="100%" style="margin: 3; border-color: #fff">  
+
     <Mapbox alignSelf="center" hideLogo="false" accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="{{ Latitude }}" longitude="{{ Longitude }}" hideCompass="true" zoomLevel="15"
         showUserLocation="true" disableZoom="false" disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
     </Mapbox>
-    <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="margin: 5;" (tap)="onBookTap()"></Button>
+     
+</ContentView>
 
-</StackLayout>
+<!--
+ <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="height: 40; width: 200; margin-top: 550;" (tap)="onBookTap()"></Button>-->
+
+<div id="map"></div>
+<div class='filter-ctrl'>
+    <input id='filter-input' type='text' name='filter' placeholder='Filter by name' />
+</div>

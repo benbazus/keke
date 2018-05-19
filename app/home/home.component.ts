@@ -27,12 +27,14 @@ import {
 } from "nativescript-mapbox";
 import * as geolocation from "nativescript-geolocation";
 import { Accuracy } from "ui/enums";
-
+import * as appversion from "nativescript-appversion";
 import { Directions } from "nativescript-directions";
 import { GeolocationService } from "~/shared/services/geolocation.service";
 import { GooglePlayService } from "~/shared/services/google-play.service";
 import { Position } from "~/models/locationResponse";
 import { ObservableProperty } from "~/shared/observable-decorator";
+
+import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
 
 declare var UIImage: any;
 declare var UIBarMetrics: any;
@@ -92,7 +94,9 @@ export class HomeComponent implements OnInit {
     private zone: NgZone,
     private geolocationService: GeolocationService,
     private _page: Page,
-    private googleService: GooglePlayService
+    private googleService: GooglePlayService,
+     private router: Router
+
   ) {
     // if (topmost().ios) {
     //   var navigationBar = topmost().ios.controller.navigationBar;
@@ -102,9 +106,29 @@ export class HomeComponent implements OnInit {
     // }
 
     //  this._page.actionBar.backgroundColor = "translucent";
-    this._page.actionBarHidden = true;
+   // this._page.actionBarHidden = true;
     geolocation.enableLocationRequest(true);
   }
+
+
+getVersionName() {
+   appversion.getVersionName().then((v: string) => {
+      console.log("Your app's version is: " + v);
+  });
+}
+
+getVersionCode() {
+   appversion.getVersionCode().then((v: string) => {
+      console.log("Your app's version code is: " + v);
+  });
+}
+
+
+getAppId() {
+  appversion.getAppId().then((id: string) => {
+      console.log("Your app's id is: " + id);
+  });
+}
 
   enableLocationServices(): void {
     geolocation.isEnabled().then(enabled => {
@@ -120,30 +144,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  //=========================== Start Properties =================================
-  private _latitude: number;
-  public get Latitude(): number {
-    console.log("Latitude get reached, and the value is :" + this._latitude);
-    return this._latitude;
-  }
-
-  public set Latitude(value: number) {
-    console.log("Latitude set reached, and the value is :" + value);
-    this._latitude = value;
-  }
-
-  private _longitude: number;
-  public get Longitude(): number {
-    console.log("Longitude get reached, and the value is :" + this._longitude);
-    return this._longitude;
-  }
-
-  public set Longitude(value: number) {
-    console.log("Longitude set reached, and the value is :" + value);
-    this._longitude = value;
-  }
-
-  //=========================== End Properties =================================
+ 
 
   ngOnInit() {
     console.log("checking if geolocation is enabled");
@@ -186,8 +187,8 @@ export class HomeComponent implements OnInit {
         this.startpointLatitude = location.latitude;
         this.startpointLongitude = location.longitude;
 
-        this.Longitude = location.longitude;
-        this.Latitude = location.latitude;
+       // this.Longitude = location.longitude;
+       // this.Latitude = location.latitude;
       },
       e => {
         console.log("failed to get location");
@@ -218,7 +219,17 @@ export class HomeComponent implements OnInit {
         selected: true
       }
     ]);
+
+    this.centerMap(args);
   }
+
+ public centerMap(args: any) {
+              this.mapbox.setCenter({
+            lat: this.startpointLatitude,
+            lng: this.startpointLongitude,
+            animated: false
+        });
+    }
 
   onBookTap() {
     console.log("onBookTap");
@@ -235,15 +246,15 @@ export class HomeComponent implements OnInit {
 
   showLocation() {
     geolocation
-      .getCurrentLocation({ desiredAccuracy: Accuracy.high, timeout: 5000 })
+      .getCurrentLocation({  desiredAccuracy: Accuracy.high, updateDistance: 10, minimumUpdateTime: 1000 * 1 })
       .then(location => {
         console.log("startpointLatitude received: " + location.latitude);
         console.log("startpointLongitude received: " + location.longitude);
         this.startpointLatitude = location.latitude;
         this.startpointLongitude = location.longitude;
 
-        this.Longitude = location.longitude;
-        this.Latitude = location.latitude;
+      //  this.Longitude = location.longitude;
+      //  this.Latitude = location.latitude;
 
         this.mapbox.setCenter({
           lat: location.latitude,
@@ -268,7 +279,7 @@ export class HomeComponent implements OnInit {
     this.googleService
       .getCurrentLocation(this.startpointLatitude, this.startpointLongitude)
       .then(result => {
-        //	console.log("The result is : ", result);
+        this.currentGeoLocation  = result;
         this.origin = result.results[0].formatted_address;
         console.log("The current address is : ", this.origin);
       })
@@ -276,6 +287,14 @@ export class HomeComponent implements OnInit {
         console.log("Unable to get current address. Error occured!:", error);
       });
   }
+
+onStartBookingTap() {
+   console.log(">>>>>>>>Start search Harrssed <<<<<<<<<<: ");
+    let navigationExtras: NavigationExtras = {
+      queryParams: { currentGeoLocation: this.currentGeoLocation }
+    };
+    this.router.navigate(["search"], navigationExtras);
+}
 
   showSideDrawer(args: EventData) {
     console.log("Show SideDrawer tapped.");

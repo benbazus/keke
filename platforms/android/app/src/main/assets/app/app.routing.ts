@@ -9,7 +9,7 @@ import { SignupComponent } from "~/signup/signup.component";
 import { BookingComponent } from "~/booking/booking.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/booking", pathMatch: "full" },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
   //  { path: "", redirectTo: "/items", pathMatch: "full" },
   { path: "booking", component: BookingComponent },  
       { path: "home", component: HomeComponent },    

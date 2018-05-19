@@ -11,7 +11,7 @@
     <ListView style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
         <ng-template let-item="item">
             <GridLayout style="padding: 10px" rows="*" columns="*,*">
-                <Image col="0" row="0"  stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
+                <Image col="0" row="0" class="fa-sitemap"  stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
                 <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
             </GridLayout>
         </ng-template>

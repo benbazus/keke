@@ -35,4 +35,45 @@ public searchLocation(destination: string) {
             return json;
         });
     }
+
+    getLocationIPByPlaceID(placeid){
+
+        const url = `${Config.SEARCH_BY_PLACEID_URL}placeid=${placeid}&key=${Config.API_KEY}`;
+
+        console.log("###############################")
+        console.log("################### placeid=" + placeid)
+        console.log("################### url=" + url)
+        console.log("###############################")
+    
+        return fetch(url).then((response) => {
+            return response.json();
+        }).then((json) => {
+            return json;
+        });
+     
+
+    }
+
+
+    getDistance(origin, destination) {
+      
+        // "https://maps.googleapis.com/maps/api/directions/json?origin=75+9th+Ave+New+York,+NY&destination=MetLife+Stadium+1+MetLife+Stadium+Dr+East+Rutherford,+NJ+07073&key=YOUR_API_KEY"
+   
+        const searchOrigin = this.capitalize(origin).replace(new RegExp(" ", "g"), "");
+        const searchDestination = this.capitalize(destination).replace(new RegExp(" ", "g"), "");
+
+        const url = `${Config.DIRECTION_URL}origin=${searchOrigin}&destination=${searchDestination}&key=${Config.API_KEY}`;
+
+        console.log("==============================")
+        console.log( url)
+        console.log("==============================")
+        
+        console.log("The URL is: " + url);
+        return fetch(url).then((response) => {
+            return response.json();
+        }).then((json) => {
+            return json;
+        });
+    }
+
 }

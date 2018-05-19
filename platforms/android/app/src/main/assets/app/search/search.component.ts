@@ -21,6 +21,7 @@ export class SearchComponent extends Observable implements OnInit  {
 
 
   items: ObservableArray<any>;
+  public locationArray: Array<any>;
 
   @ObservableProperty()
 	public message: string;

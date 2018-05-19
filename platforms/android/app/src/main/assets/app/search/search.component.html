@@ -1,19 +1,18 @@
 
-<ActionBar title="Search Location" icon="" class="action-bar">
+<ActionBar title="Search Location" color="white">
     <NavigationButton (tap)="onNavBtnTap()" text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
       <StackLayout aria-orientation="vertical">
-        <SearchBar style="padding-top: 10px; margin-top: 10px; padding: .10px" (textChange)="onOriginTap($event)" hint="Your Location" textFieldHintColor="#DEDEDE" [text]="origin"  [(ngModel)]="origin" (clear)="onOriginClear" class="search-bar"></SearchBar>
-        <SearchBar style="padding-top: 10px; margin-top: 10px; padding: .10px;  vertical-align: center;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" textFieldHintColor="#DEDEDE" [text]="destination"  [(ngModel)]="destination" (clear)="onDestinationClear"
-            class="search-bar"></SearchBar>
+        <SearchBar (textChange)="onOriginTap($event)" hint="Your Location" textFieldHintColor="#DEDEDE" [text]="origin"  [(ngModel)]="origin" (clear)="onOriginClear" class="search-bar"></SearchBar>
+        <SearchBar (textChange)="onDestinationTap($event)" hint="Enter Pick Location" textFieldHintColor="#DEDEDE" [text]="destination"  [(ngModel)]="destination"class="search-bar"></SearchBar>
     </StackLayout>
 </ActionBar>
 
 <StackLayout style="margin-top: 5px;" class="page">  
     <ListView style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
         <ng-template let-item="item">
-            <GridLayout style="padding: 10px" rows="*,*,*" columns="*,*,*">
-                <Image col="0" row="0" class="fa-arrow-circle-down" stretch="aspectFill"></Image>
-                <Label colSpan="3" row="0" [text]="item.description" class="fa-map"></Label>
+            <GridLayout style="padding: 10px" rows="*" columns="20,*">
+                <Image col="0" row="0"  stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
+                <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
             </GridLayout>
         </ng-template>
     </ListView>

@@ -1,0 +1,82 @@
+{
+  "_from": "nativescript-telephony",
+  "_id": "nativescript-telephony@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha1-CPRs7qOeizyFJTypcALUV7sXJaU=",
+  "_location": "/nativescript-telephony",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "nativescript-telephony",
+    "name": "nativescript-telephony",
+    "escapedName": "nativescript-telephony",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-telephony/-/nativescript-telephony-1.0.4.tgz",
+  "_shasum": "08f46ceea39e8b3c85253ca97002d457bb1725a5",
+  "_spec": "nativescript-telephony",
+  "_where": "D:\\tmp\\keke",
+  "author": {
+    "name": "Rob Laverty",
+    "email": "roblav96@gmx.com"
+  },
+  "bugs": {
+    "url": "https://github.com/roblav96/nativescript-telephony/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A Nativescript plugin to get the device's SIM data (carrier name, mcc mnc, country code, telephonenumber, etc)",
+  "devDependencies": {
+    "tns-platform-declarations": "^2.0.0",
+    "typescript": "~2.1.0"
+  },
+  "homepage": "https://github.com/roblav96/nativescript-telephony",
+  "keywords": [
+    "NativeScript",
+    "telephony",
+    "nativescript",
+    "telephony",
+    "sim",
+    "uicc",
+    "carrier",
+    "mcc",
+    "mnc",
+    "telephonenumber",
+    "imei",
+    "ecosystem:nativescript",
+    "nativescript-android",
+    "nativescript-ios"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/roblav96/nativescript-telephony/blob/master/LICENSE"
+  },
+  "main": "telephony",
+  "name": "nativescript-telephony",
+  "nativescript": {
+    "platforms": {
+      "android": "2.0.0",
+      "ios": "2.0.1"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roblav96/nativescript-telephony.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "demo.android": "npm run preparedemo && cd demo && tns run android",
+    "demo.ios": "npm run preparedemo && cd demo && tns emulate ios",
+    "preparedemo": "npm run build && cd demo && tns plugin remove nativescript-telephony && tns plugin add .. && tns install",
+    "setup": "cd demo && npm install && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
+  },
+  "typings": "index.d.ts",
+  "version": "1.0.4"
+}

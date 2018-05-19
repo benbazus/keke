@@ -8,8 +8,16 @@
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },
     {
+        "name": "nativescript-appversion",
+        "directory": "..\\..\\node_modules\\nativescript-appversion"
+    },
+    {
         "name": "nativescript-directions",
         "directory": "..\\..\\node_modules\\nativescript-directions"
+    },
+    {
+        "name": "nativescript-email",
+        "directory": "..\\..\\node_modules\\nativescript-email"
     },
     {
         "name": "nativescript-geolocation",
@@ -20,8 +28,16 @@
         "directory": "..\\..\\node_modules\\nativescript-mapbox"
     },
     {
+        "name": "nativescript-ngx-fonticon",
+        "directory": "..\\..\\node_modules\\nativescript-ngx-fonticon"
+    },
+    {
         "name": "nativescript-sqlite",
         "directory": "..\\..\\node_modules\\nativescript-sqlite"
+    },
+    {
+        "name": "nativescript-telephony",
+        "directory": "..\\..\\node_modules\\nativescript-telephony"
     },
     {
         "name": "nativescript-theme-core",

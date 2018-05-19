@@ -8,19 +8,69 @@
     margin-bottom: 15;
 }
 
+        
+        #map { 
+            position:absolute;  
+            top:0; 
+            bottom:0; 
+            width:100%; 
+        }
 
-/* ActionBar {
-    background-color: transparent;
-    color: white;
-} */
+         .filter-ctrl {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        width: 180px;
+    }
 
-container {
+    .filter-ctrl input[type=text] {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        width: 100%;
+        border: 0;
+        background-color: #fff;
+        height: 40px;
+        margin: 0;
+        color: rgba(0,0,0,.5);
+        padding: 10px;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        border-radius: 3px;
+    }
+
+.textField {
+      
+        width: 60%;
+        border: 5;
+        height: 30;
+        background-color: #fff;       
+        margin: 0;
+        z-index: 1;
+        padding: 10px;
+        border-radius: 1px;
+}
+
+  .actionBar {
+    height: 40; 
+    width: 250; 
+    margin-bottom: 600;
+    z-index: 2;
+     position: absolute;
+        border: 10;
+        background-color: #fff;
+        margin: 0;
+        color: rgba(0,0,0,.5);
+        padding: 10px;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        border-radius: 3px;
+} 
+
+.container {
     flex: 1;
     justify-content: center;
     align-items: center;
 }
 
-Mapbox {}
+
 
 .s-label {
     /* background-color: transparent; */

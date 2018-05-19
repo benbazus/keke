@@ -9,11 +9,12 @@ In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 
-
+*/
  @import '~nativescript-theme-core/css/core.light.css';
- */
+ 
 
- /*
+
+/*
 @import '~nativescript-theme-core/css/aqua.css';
 @import '~nativescript-theme-core/css/blue.css';
 @import '~nativescript-theme-core/css/brown.css';
@@ -27,9 +28,15 @@ refer to http://docs.nativescript.org/ui/theme.
 @import '~nativescript-theme-core/css/sky.css';
 */
 
+
 /* only for reference, is NOT working in this example (wrong codes) 
 .fa {
    font-family: 'FontAwesome', 'fontawesome-webfont';
    font-size: 48;
 }
+
 */
+
+.fa {
+    font-family: FontAwesome;
+}

@@ -58,7 +58,31 @@ export class BookingComponent implements OnInit {
 		this.doAddPolyline();
 	}
 
+ //=========================== Start Properties =================================
+  private _latitude: number;
+  public get Latitude(): number {
+    console.log("Latitude get reached, and the value is :" + this._latitude);
+    return this._latitude;
+  }
 
+  public set Latitude(value: number) {
+    console.log("Latitude set reached, and the value is :" + value);
+    this._latitude = value;
+  }
+
+  private _longitude: number;
+  public get Longitude(): number {
+    console.log("Longitude get reached, and the value is :" + this._longitude);
+    return this._longitude;
+  }
+
+  public set Longitude(value: number) {
+    console.log("Longitude set reached, and the value is :" + value);
+    this._longitude = value;
+  }
+
+  //=========================== End Properties =================================
+  
 searchDestination() {
 	 console.log(">>>>>>>>>>>> search Origin <<<<<<<<<<<<<: ");
     let navigationExtras: NavigationExtras = {
