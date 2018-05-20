@@ -1,17 +1,28 @@
-
-<ActionBar title="Search Location" color="white">
+<ActionBar title="Search">
     <NavigationButton (tap)="onNavBtnTap()" text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
-      <StackLayout aria-orientation="vertical">
-        <SearchBar (textChange)="onOriginTap($event)" hint="Your Location" textFieldHintColor="#DEDEDE" [text]="origin"  [(ngModel)]="origin" (clear)="onOriginClear" class="search-bar"></SearchBar>
-        <SearchBar (textChange)="onDestinationTap($event)" hint="Enter Pick Location" textFieldHintColor="#DEDEDE" [text]="destination"  [(ngModel)]="destination"class="search-bar"></SearchBar>
-    </StackLayout>
+
 </ActionBar>
 
-<StackLayout style="margin-top: 5px;" class="page">  
-    <ListView style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
+<StackLayout>
+
+    <StackLayout orientation="vertical" style="z-index: 1;">
+        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; margin-top: 10;  width: 95%; font-size: 12;" (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" class="search-bar"></SearchBar>
+        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" class="search-bar"></SearchBar>
+    </StackLayout>
+
+     <!-- 
+    <StackLayout orientation="vertical" style="z-index: 5;">
+        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; margin-top: 10;  width: 95%; font-size: 12;" (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" [(ngModel)]="origin" class="search-bar"></SearchBar>
+        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" [(ngModel)]="destination" class="search-bar"></SearchBar>
+    </StackLayout>
+
+   
+    <ActivityIndicator busy="{{ isloading }}" visibility="{{ isloading ? 'visible' : 'collapsed' }}"></ActivityIndicator>
+-->
+    <ListView visibility="{{ isListViewVisible ? 'visible' : 'collapsed' }}" style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
         <ng-template let-item="item">
-            <GridLayout style="padding: 10px" rows="*" columns="20,*">
-                <Image col="0" row="0"  stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
+            <GridLayout style="padding: 10px" rows="*" columns="*,*">
+                <Image col="0" row="0" class="fa-sitemap" stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
                 <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
             </GridLayout>
         </ng-template>

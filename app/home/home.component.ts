@@ -5,7 +5,7 @@ import { EventData, Observable } from "data/observable";
 //import { ActivatedRoute } from '@angular/router';
 //import { Observable } from "rxjs/Observable";
 
-//import { ObservableProperty } from '~/shared/observable-decorator';
+import  * as appSettings from "application-settings";
 
 import { Frame, topmost } from "tns-core-modules/ui/frame";
 const topmostFrame: Frame = topmost();
@@ -35,6 +35,7 @@ import { Position } from "~/models/locationResponse";
 import { ObservableProperty } from "~/shared/observable-decorator";
 
 import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
+import { AlertOptions } from "tns-core-modules/ui/dialogs/dialogs";
 
 declare var UIImage: any;
 declare var UIBarMetrics: any;
@@ -71,12 +72,12 @@ declare var UIBarMetrics: any;
   ]
 })
 export class HomeComponent implements OnInit {
-  origin: any;
+  //origin: any;
   private mapbox: Mapbox;
   private directions = new Directions();
 
-  public startpointLongitude: number;
-  public startpointLatitude: number;
+  //public startpointLongitude: number;
+  //public startpointLatitude: number;
   public endpointLongitude: number;
   public endpointLatitude: number;
   public timestamp: string;
@@ -90,250 +91,131 @@ export class HomeComponent implements OnInit {
 
   currentGeoLocation: any;
 
+  public photos: any[];
+
   constructor(
     private zone: NgZone,
     private geolocationService: GeolocationService,
     private _page: Page,
     private googleService: GooglePlayService,
      private router: Router
-
   ) {
-    // if (topmost().ios) {
-    //   var navigationBar = topmost().ios.controller.navigationBar;
-    //   navigationBar.translucent = false;
-    //   navigationBar.setBackgroundImageForBarMetrics(UIImage.new(), UIBarMetrics.Default);
-    //   navigationBar.shadowImage = UIImage.new();
-    // }
-
-    //  this._page.actionBar.backgroundColor = "translucent";
-   // this._page.actionBarHidden = true;
-    geolocation.enableLocationRequest(true);
+    if (!geolocation.isEnabled()) {
+      geolocation.enableLocationRequest();
+    }
+   this.mapbox = new Mapbox();
   }
 
-
-getVersionName() {
-   appversion.getVersionName().then((v: string) => {
-      console.log("Your app's version is: " + v);
-  });
-}
-
-getVersionCode() {
-   appversion.getVersionCode().then((v: string) => {
-      console.log("Your app's version code is: " + v);
-  });
-}
-
-
-getAppId() {
-  appversion.getAppId().then((id: string) => {
-      console.log("Your app's id is: " + id);
-  });
-}
-
-  enableLocationServices(): void {
-    geolocation.isEnabled().then(enabled => {
-      if (!enabled) {
-        geolocation.enableLocationRequest().then(() => {
-          this.showLocation();
-          this.watch();
-        });
-      } else {
-        this.showLocation();
-        this.request();
-      }
-    });
-  }
-
- 
 
   ngOnInit() {
-    console.log("checking if geolocation is enabled");
-    geolocation.isEnabled().then(
-      enabled => {
-        console.log("Is geolocation Enabled =", enabled);
-        if (enabled) {
-          this.showLocation();
-          this.watch();
-        } else {
-          this.request();
-        }
-      },
-      e => {
-        console.log("isEnabled error", e);
-        this.request();
-      }
-    );
+    console.log("ngOnInit reached");
+
+    this._longitude = 32.5678254;
+    this._latitude = 0.3281469;
+
+    this.getLocation();
   }
 
-  request() {
-    console.log("enableLocationRequest()");
-    geolocation.enableLocationRequest().then(
-      () => {
-        console.log("location is enabled!");
-        this.watch();
-      },
-      e => {
-        console.log("Failed to enable location service", e);
-      }
-    );
-  }
+  
+ //=========================== Start Properties =================================
+ private _latitude: number;
+ public get startpointLatitude(): number {
+   console.log("startpointLatitude get reached, and the value is :" + this._latitude);
+   return this._latitude;
+ }
 
-  watch() {
-    console.log("watchLocation()");
-    geolocation.watchLocation(
-      location => {
-        console.log(location);
-        // this.startpointLatitude.set("startpointLatitude", location.latitude);
-        this.startpointLatitude = location.latitude;
-        this.startpointLongitude = location.longitude;
+ public set startpointLatitude(value: number) {
+   console.log("startpointLatitude set reached, and the value is :" + value);
+   this._latitude = value;
+ }
 
-       // this.Longitude = location.longitude;
-       // this.Latitude = location.latitude;
-      },
-      e => {
-        console.log("failed to get location");
-      },
-      {
-        desiredAccuracy: Accuracy.high,
-        maximumAge: 5000,
-        timeout: 20000
-      }
-    );
-  }
+ private _longitude: number;
+ public get startpointLongitude(): number {
+   console.log("startpointLongitude get reached, and the value is :" + this._longitude);
+   return this._longitude;
+ }
 
-  onMapReady(args) {
-    this.mapbox = args.map;
-    var nativeMapView = args.ios ? args.ios : args.android;
-    console.log(
-      "Mapbox onMapReady for " +
-        (args.ios ? "iOS" : "Android") +
-        ", native object received: " +
-        nativeMapView
-    );
-    args.map.addMarkers([
-      {
-        lat: this.startpointLatitude,
-        lng: this.startpointLongitude,
-        title: "You are here",
-        //subtitle: 'Really really nice location',
-        selected: true
-      }
-    ]);
+ public set startpointLongitude(value: number) {
+   console.log("startpointLongitude set reached, and the value is :" + value);
+   this._longitude = value;
+ }
 
-    this.centerMap(args);
-  }
 
- public centerMap(args: any) {
-              this.mapbox.setCenter({
-            lat: this.startpointLatitude,
-            lng: this.startpointLongitude,
-            animated: false
-        });
-    }
+ private _origin: string;
+ public get Origin(): string {
+   console.log("Origin get reached, and the value is :" + this._origin);
+   return this._origin;
+ }
 
-  onBookTap() {
-    console.log("onBookTap");
-    this.mapbox.getUserLocation().then(function(userLocation) {
-      console.log(
-        "Current user location: " +
-          userLocation.location.lat +
-          ", " +
-          userLocation.location.lng
-      );
-      console.log("Current user speed: " + userLocation.speed);
-    });
-  }
+ public set Origin(value: string) {
+   console.log("Origin set reached, and the value is :" + value);
+   this._origin = value;
+ }
+ //=========================== End Properties =================================
 
-  showLocation() {
-    geolocation
-      .getCurrentLocation({  desiredAccuracy: Accuracy.high, updateDistance: 10, minimumUpdateTime: 1000 * 1 })
-      .then(location => {
-        console.log("startpointLatitude received: " + location.latitude);
-        console.log("startpointLongitude received: " + location.longitude);
-        this.startpointLatitude = location.latitude;
-        this.startpointLongitude = location.longitude;
+  getLocation() {
+		geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, timeout: 8000 })
+			.then((location) => {
+				console.log("startpointLatitude received: " + location.latitude);
+				console.log("startpointLongitude received: " + location.longitude);
+				this._latitude = location.latitude;
+        this._longitude = location.longitude;
 
-      //  this.Longitude = location.longitude;
-      //  this.Latitude = location.latitude;
-
-        this.mapbox.setCenter({
-          lat: location.latitude,
-          lng: location.longitude,
-          animated: true
-        });
-
-        this.getCurrentAddress();
-      })
-      .catch(error => {
+				this.getCurrentAddress();
+			}).catch((error) => {
         console.log("Location error received: " + error);
-      });
+			});
   }
-
-  getCurrentAddress() {
-    console.log(
-      "latitude is: " +
-        this.startpointLatitude +
-        "longitude is:" +
-        this.startpointLongitude
-    );
-    this.googleService
-      .getCurrentLocation(this.startpointLatitude, this.startpointLongitude)
-      .then(result => {
-        this.currentGeoLocation  = result;
-        this.origin = result.results[0].formatted_address;
-        console.log("The current address is : ", this.origin);
-      })
-      .catch(error => {
-        console.log("Unable to get current address. Error occured!:", error);
-      });
-  }
-
+  
 onStartBookingTap() {
-   console.log(">>>>>>>>Start search Harrssed <<<<<<<<<<: ");
-    let navigationExtras: NavigationExtras = {
-      queryParams: { currentGeoLocation: this.currentGeoLocation }
-    };
-    this.router.navigate(["search"], navigationExtras);
+    this.router.navigate(["search"]);
 }
 
-  showSideDrawer(args: EventData) {
-    console.log("Show SideDrawer tapped.");
-    // Show sidedrawer ...
-  }
+getCurrentAddress() {
+  console.log(
+    "latitude is: " +
+      this.startpointLatitude +
+      "longitude is:" +
+      this.startpointLongitude
+  );
+  this.googleService
+    .getCurrentLocation(this.startpointLatitude, this.startpointLongitude)
+    .then(result => {
+      appSettings.setString("origin",  result);
+      this.centerMap();
+      this.addMarkers();
 
-  //    public rrrrrrrronMapReady(args) {
-  //      this.mapbox = args.map;
-  //      this.geolocationService.getLocation().then(() => {
-  //          this.loadInitalLocation().then(
-  //           loc => {
-  //                  this.position = loc.map((loc) => {
-  //                   loc.distance = this.geolocationService.getDistanceFrom(
-  //                          parseFloat(loc.latitude),
-  //                          parseFloat(loc.longitude));
-  //                      return loc;
-  //                  });
-  //                  this.dropMarkers();
-  //                  this.mapbox.setCenter({
-  //                      lat: this.geolocationService.latitude,
-  //                      lng: this.geolocationService.longitude,
-  //                      animated: true
-  //                  });
-  //              },
-  //              error => console.log(error));
-  //          });
-  //  }
+    })
+    .catch(error => {
+      console.log("Unable to get current address. Error occured!:", error);
+    });
+}
 
-  //  public dropMarkers() {
-  //    let markers = this.position.map((loc: Position, index: number) => {
-  //        return {
-  //            lat: loc.latitude,
-  //            lng: loc.longitude,
-  //        }
-  //    });
-  //    this.mapbox.addMarkers(markers);
-  //  }
+  centerMap() {
+   this.mapbox.setCenter({
+       lat: this.startpointLatitude,
+       lng: this.startpointLongitude,
+       animated: true
+   });
+ }
 
-  //    public loadInitalLocation() {
-  //      return this.googleService.getCurrentLocation(this.geolocationService.latitude, this.geolocationService.longitude);
-  //    }
+addMarkers() {
+  this.mapbox.addMarkers([
+    {
+      lat: this.startpointLatitude,
+      lng: this.startpointLongitude,
+      selected: true
+    }
+  ]);
+}
+onMapReady(args) {
+    this.mapbox = args.map;
+    this.addMarkers();
+    this.mapbox.setCenter({
+      lat: this.startpointLatitude,
+      lng: this.startpointLongitude,
+      animated: true
+  });  
+}
+
 }

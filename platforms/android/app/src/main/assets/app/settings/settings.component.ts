@@ -17,22 +17,16 @@ import * as appSettings from "application-settings";
   templateUrl: "./search/search.component.html",
   styleUrls: ["./search/search.component.css"]
 })
-export class SearchComponent  implements OnInit {
- 
+export class SettingsComponent extends Observable implements OnInit {
   items: ObservableArray<any>;
   public locationArray: Array<any>;
 
  isListViewVisible: boolean;
 isloading:boolean;
 
-isOriginSearched: boolean;
-isDestinationSearched: boolean;
   searchType: string;
   public origin: string;
   public destination: string;
-
-
-
 
   constructor(
     private _page: Page,
@@ -42,21 +36,16 @@ isDestinationSearched: boolean;
     private geolocationService: GeolocationService,
     private googleService: GooglePlayService
   ) {
-   // this.getOrigin();
+    super();
+    this.getOrigin();
     //  this.router.queryParams.subscribe(params => {
     //  this.searchType = params["searchType"];
     // });
   }
 
   ngOnInit() {
-     	this.isDestinationSearched= false;
-       this.isOriginSearched = false;
-       
-       console.log("<< result >> " );
-      var result= JSON.parse(appSettings.getString("origin") || "[]");
-
-      console.log("<< result <<<<beatup>> " + result);
-
+    // 	this.isLoading= true;
+    // 	this.isAnonymous = BackendService.isAnonymous;
     // 	this.sub$ = this.route.params;
     // 	this.articles$ = this.sub$.switchMap((params: any) =&#x3E; {
     // 								this.categoryTitle = params[&#x27;categoryTitle&#x27;];
@@ -82,17 +71,15 @@ isDestinationSearched: boolean;
 
   onOriginTap(args) {
     let originSearch = <SearchBar>args.object;
-
-    if(this.isOriginSearched === false)
-    {
-      this.isloading= true;
     if (originSearch.text.length !== null || originSearch.text.length === 0)
       if (originSearch.text.length > 2 && originSearch.text.length % 3 === 0) {
         const searchString = originSearch.text.split(" ").join("+");
-        
+        this.isloading= true;
         this.googleService.searchLocation(searchString).then(
           data => {
-
+            //{"predictions":[{"description":"Kampala, Uganda","id":"4004250a4c4934b42dbecf7aba5a594070917eec","matched_substrings":[{"length":6,"offset":0}],"place_id":"ChIJm7N0nQ-8fRcR7G9r2T2QOEU","reference":"CjQnAAAAdHO1DPcdSoBfk9-OsZtHRaSZ7f1O-mEXv0
+            //console.log("The destination : " + data.results[0].name);
+           // console.log("The origin : " + data.predictions[0].description);
 this.isListViewVisible = true;
             this.items = new ObservableArray<any>();
             for (var i = 0; i < data.predictions.length; i++) {
@@ -105,29 +92,22 @@ this.isListViewVisible = true;
               console.log("may be terrfic for origin: " + i);
             }
             this.isloading= false;
-            this.isOriginSearched = true;
           },
           error => {
           	this.isloading= false;
-            this.isListViewVisible = false;
-            this.isOriginSearched =false;
+          	this.isListViewVisible = false;
             this.handleErrors(error);
           }
         );
       }
   }
-  }
 
   onDestinationTap(args) {
     let originSearch = <SearchBar>args.object;
-
-    if(this.isDestinationSearched === false)
-    {
-      this.isloading= true;
     if (originSearch.text.length !== null || originSearch.text.length === 0)
       if (originSearch.text.length > 2 && originSearch.text.length % 3 === 0) {
         const searchString = originSearch.text.split(" ").join("+");
-
+       this.isloading= true;
         this.googleService.searchLocation(searchString).then(
           data => {
           	this.isListViewVisible = true;
@@ -142,11 +122,9 @@ this.isListViewVisible = true;
               this.searchType = "destination";
               console.log("may be terrfic for destination: " + i);
             }
-            this.isDestinationSearched = false;
             this.isloading= false;
           },
           error => {
-            this.isDestinationSearched = false;
           	this.isloading= false;
           	this.isListViewVisible = false;
             this.handleErrors(error);
@@ -154,7 +132,6 @@ this.isListViewVisible = true;
         );
       }
   }
-}
   handleErrors(error: any) {
     console.error(error.message);
   }
@@ -170,7 +147,6 @@ this.isListViewVisible = true;
       this.destination = args.view.bindingContext.description;
       appSettings.setString("destination", args.view.bindingContext);
       this.isListViewVisible = false;
-      this.isDestinationSearched = true;
     } else {
       console.log(
         ">>Navigation button tapped is for origin <<" +
@@ -179,7 +155,6 @@ this.isListViewVisible = true;
       this.origin = args.view.bindingContext.description;
       appSettings.setString("origin", args.view.bindingContext);
       this.isListViewVisible= false;
-      this.isOriginSearched = true
     }
     // //	this.routerExtensions.back();
     //  this.route.navigate(["booking"]);
@@ -189,6 +164,6 @@ this.isListViewVisible = true;
     // This code will be called only in Android.
     console.log("Navigation button tapped!");
     this.routerExtensions.back();
-   // //	topmost().navigate("booking");
+    //	topmost().navigate("booking");
   }
 }

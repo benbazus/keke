@@ -13,7 +13,7 @@ import { ChatComponent } from '~/chat/chat.component';
 import { GooglePlayService } from '~/shared/services/google-play.service';
 import { UserService } from '~/shared/services/user.service';
 import { BookingComponent } from '~/booking/booking.component';
-
+import { SettingsComponent } from "~/settings/settings.component";
 
 import { registerElement } from "nativescript-angular/element-registry";
 import { ModalComponent } from '~/booking/modal.component';
@@ -37,6 +37,7 @@ registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
         ChatComponent,
         BookingComponent,
         SearchComponent,
+        SettingsComponent,
         ModalComponent
     ],
     providers: [
