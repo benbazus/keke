@@ -1,21 +1,12 @@
-
 <ActionBar class="action-bar">
     <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
         <Label text="Tax Application" style="text-align: center;" class="action-title"></Label>
     </StackLayout>
 </ActionBar>
 
-
-<!-- 
-<StackLayout orientation="horizontal" style="height: 40; width: 200; margin-top: 550;" *ngIf="!currentGeoLocation">
-     <Button text="Turn on location service" (tap)="enableLocationServices()"></Button>
-</StackLayout>
--->
-
- <TextField style="z-index: 1; margin-bottom: 400; background-color: #F0F0F0; padding: 10px; text-align: center; position: absolute; width: 60%;  height: 30;" editable="false" (tap)="onStartBookingTap()" hint="Where to?" class="input input-border"></TextField>
-     <ContentView id="map"  row="2" height="100%" width="100%" style="margin: 3; border-color: #fff">  
-    <Mapbox alignSelf="center" hideLogo="false" accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="{{ startpointLatitude }}" longitude="{{ startpointLongitude }}" hideCompass="true" zoomLevel="12"
-        showUserLocation="true" disableZoom="false" disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
-    </Mapbox>   
+<TextField style="z-index: 1; margin-bottom: 400; background-color: #F0F0F0; padding: 10px; text-align: center; position: absolute; width: 60%;  height: 30;" editable="false" (tap)="onStartBookingTap()" hint="Where to?" class="input input-border"></TextField>
+<ContentView row="2" height="100%" width="100%" style="margin: 3; border-color: #fff">
+    <Mapbox alignSelf="center" hideLogo="false" accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="{{ startpointLatitude }}" longitude="{{ startpointLongitude }}" hideCompass="true"
+        zoomLevel="12" showUserLocation="true" disableZoom="false" disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
+    </Mapbox>
 </ContentView>
-

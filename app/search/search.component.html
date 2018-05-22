@@ -3,28 +3,40 @@
 
 </ActionBar>
 
-<StackLayout>
 
-    <StackLayout orientation="vertical" style="z-index: 1;">
-        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; margin-top: 10;  width: 95%; font-size: 12;" (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" class="search-bar"></SearchBar>
-        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" class="search-bar"></SearchBar>
-    </StackLayout>
+<!-- 
+<SearchBar (clear)="onOriginClear()" style="z-index: 1; background-color: #F0F0F0;  height:40; margin-top: 450;  width: 95%; font-size: 12;" (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" class="search-bar"></SearchBar>
+<SearchBar (clear)="onDestinationClear()" style="z-index: 1; background-color: #F0F0F0; height:40; margin-bottom: 500; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" class="search-bar"></SearchBar>
+ -->
 
-     <!-- 
-    <StackLayout orientation="vertical" style="z-index: 5;">
-        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; margin-top: 10;  width: 95%; font-size: 12;" (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" [(ngModel)]="origin" class="search-bar"></SearchBar>
-        <SearchBar style="background-color: #F0F0F0; padding: 5px; margin: 3; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" [(ngModel)]="destination" class="search-bar"></SearchBar>
-    </StackLayout>
 
-   
-    <ActivityIndicator busy="{{ isloading }}" visibility="{{ isloading ? 'visible' : 'collapsed' }}"></ActivityIndicator>
--->
-    <ListView visibility="{{ isListViewVisible ? 'visible' : 'collapsed' }}" style="padding-top: 10px;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
-        <ng-template let-item="item">
-            <GridLayout style="padding: 10px" rows="*" columns="*,*">
-                <Image col="0" row="0" class="fa-sitemap" stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>
-                <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
-            </GridLayout>
-        </ng-template>
-    </ListView>
+<StackLayout orientation="vertical" style="z-index: 1; margin-top: 10;">
+    <SearchBar style="background-color: #F0F0F0; width: 95%; font-size: 12; margin: 10; " (textChange)="onOriginTap($event)" hint="Your Location" [text]="origin" class="search-bar"></SearchBar>
+    <SearchBar style="background-color: #F0F0F0; width: 95%; font-size: 12;" (textChange)="onDestinationTap($event)" hint="Enter Pick Location" [text]="destination" class="search-bar"></SearchBar>
 </StackLayout>
+
+
+
+<ActivityIndicator [busy]="isBusy" [visibility]="isBusy ? 'visible' : 'collapsed'" class="activity-indicator" style="z-index: 1;"></ActivityIndicator>
+<ListView [visibility]="isListViewVisible ? 'visible' : 'collapsed'" style="z-index: 1; padding-top: 10px; margin-top: 10;" [items]="items" class="list-group" (itemTap)="onSelectedTap($event)">
+
+    <ng-template let-item="item">
+        <GridLayout style="padding: 10px" rows="*" columns="*,*">
+            <!--   <Image col="0" row="0" class="fa-sitemap" stretch="aspectFill" horizontalAlignment="left" src="{{item.image}}"></Image>-->
+            <Label col="1" row="0" [text]="item.description" class="font-awesome"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView>
+
+<ContentView height="100%" width="100%" style="margin: 3; border-color: #fff">
+    <Mapbox #map accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="50.467735" longitude="13.427718" hideCompass="true" zoomLevel="10" showUserLocation="false" disableZoom="false"
+        disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
+    </Mapbox>
+</ContentView>
+
+<!-- 
+<ContentView height="100%" width="100%" style="margin: 3; border-color: #fff">
+    <Mapbox #map accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="0.3097659," longitude="32.5312909" hideCompass="true" zoomLevel="10" showUserLocation="false" disableZoom="false"
+        disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
+    </Mapbox>
+</ContentView> -->

@@ -12,6 +12,7 @@ D:\tmp\keke\platforms\android\app\src\main\assets\app\main.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\models\locationResponse.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\models\user.model.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\search\search.component.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\settings\settings.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\shared\circular-progress-bar.component.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\shared\config.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\shared\observable-decorator.js
@@ -100,6 +101,7 @@ D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-g
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\index.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js
+D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-localstorage\localstorage.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-mapbox\mapbox.common.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-mapbox\mapbox.js
 D:\tmp\keke\platforms\android\app\src\main\assets\app\tns_modules\nativescript-ngx-fonticon\nativescript-ngx-fonticon.js

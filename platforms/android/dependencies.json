@@ -24,6 +24,10 @@
         "directory": "..\\..\\node_modules\\nativescript-geolocation"
     },
     {
+        "name": "nativescript-localstorage",
+        "directory": "..\\..\\node_modules\\nativescript-localstorage"
+    },
+    {
         "name": "nativescript-mapbox",
         "directory": "..\\..\\node_modules\\nativescript-mapbox"
     },

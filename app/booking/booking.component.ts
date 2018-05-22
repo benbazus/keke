@@ -25,6 +25,7 @@ import { ModalComponent } from '~/booking/modal.component';
 //import { TextField } from 'ui/text-field';
 //import { EventData } from 'data/observable';
 import { ActivatedRoute, Router, NavigationExtras } from "@angular/router";
+import { GooglePlayService } from '~/shared/services/google-play.service';
 
 @Component({
 	selector: 'booking',
@@ -43,18 +44,22 @@ export class BookingComponent implements OnInit {
 	public endpointLongitude: number = 40.71448;
 	public endpointLatitude: number = -74.00598;
 
+
+//	public geoJson: GeoJson[];
+	message: string;
+	
+
 	constructor(private page: Page,
 		 private router: Router,
 		private zone: NgZone, 
-		private geolocationService: GeolocationService) {
-		this.page.actionBarHidden = true;
+		private googleService: GooglePlayService) {
+	
+	//		this.page.actionBarHidden = true;
 		
 	 }
 
 	ngOnInit() { 
-		if(!geolocation.isEnabled){
-			geolocation.enableLocationRequest();
-		}
+
 		this.doAddPolyline();
 	}
 
@@ -154,5 +159,40 @@ searchDestination() {
 			  console.log("mapbox addPolyline error: " + error);
 			}
 		);
-	  }
+		}
+		
+		onNavBtnTap() {
+			this.router.navigate(["home"]);
+		}
+
+
+		getIPAddress(placeId) {
+			// console.log("<<<<<<<<<<<<<<< placeId is: >>>>>>>>>>>>>>>>>>>>" + placeId);
+	 
+			 this.googleService
+				 .getLocationIPByPlaceID(placeId)
+				 .then(results => {
+					// console.log("Output" + JSON.stringify(this.data));
+	 
+					// console.log("data.result.geometry.lat :  " + JSON.stringify(results.result.geometry.lat));
+	 
+					 const coordinates = [results.result.geometry];
+					// const newMarker   = new GeoJson(coordinates, { message: this.message })
+					 
+					// console.log("Output coordinates" + JSON.stringify(results.result));
+				 //  console.log("Output coordinates" + JSON.stringify(results.result.geometry));
+					 console.log("Output coordinates" + JSON.stringify(coordinates));
+					 //console.log("newMarker" + JSON.stringify(newMarker));
+	 
+					 // result.results.forEach(element => {
+					 //   this.locationSearch.push({ country: element.country, streetname: element.country});
+					 // });
+				 //  console.log("Output" + JSON.stringify(this.geoJson));
+					 // this.origin = result.results[0].formatted_address;
+				 })
+				 .catch(error => {
+					console.log("Error occured in retrieving IP address:", error);
+				 });
+		 }
+
 }

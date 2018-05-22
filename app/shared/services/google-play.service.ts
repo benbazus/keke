@@ -36,15 +36,10 @@ public searchLocation(destination: string) {
         });
     }
 
-    getLocationIPByPlaceID(placeid){
+   public getLocationIPByPlaceID(placeid){
 
         const url = `${Config.SEARCH_BY_PLACEID_URL}placeid=${placeid}&key=${Config.API_KEY}`;
-
-        console.log("###############################")
-        console.log("################### placeid=" + placeid)
-        console.log("################### url=" + url)
-        console.log("###############################")
-    
+        console.log(">>>>>>>>>>>>url>>>>>>>>>>>>> " +   JSON.stringify(url));
         return fetch(url).then((response) => {
             return response.json();
         }).then((json) => {
@@ -55,7 +50,7 @@ public searchLocation(destination: string) {
     }
 
 
-    getDistance(origin, destination) {
+    public  getDistance(origin, destination) {
       
         // "https://maps.googleapis.com/maps/api/directions/json?origin=75+9th+Ave+New+York,+NY&destination=MetLife+Stadium+1+MetLife+Stadium+Dr+East+Rutherford,+NJ+07073&key=YOUR_API_KEY"
    

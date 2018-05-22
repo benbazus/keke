@@ -17,6 +17,7 @@
     "nativescript-directions": true,
     "nativescript-email": true,
     "nativescript-geolocation": true,
+    "nativescript-localstorage": true,
     "nativescript-mapbox": true,
     "nativescript-ngx-fonticon": true,
     "nativescript-sqlite": true,

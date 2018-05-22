@@ -9,10 +9,9 @@ In many cases you may want to use the NativeScript core theme instead
 of writing your own CSS rules. For a full list of class names in the theme
 refer to http://docs.nativescript.org/ui/theme.
 
-
- @import '~nativescript-theme-core/css/core.light.css';
- 
 */
+
+@import '~nativescript-theme-core/css/core.light.css';
 
 /*
 @import '~nativescript-theme-core/css/aqua.css';
@@ -35,9 +34,58 @@ refer to http://docs.nativescript.org/ui/theme.
    font-size: 48;
 }
 
-
+*/
 
 .fa {
-    font-family: FontAwesome;
+    font-family: FontAwesome, fontawesome-webfont;
 }
-*/
+
+ActionBar {
+    background-color: #650100;
+    color: white;
+}
+
+.homePage {
+    background-color: #8AC215;
+}
+
+.name {
+    margin: 10;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20;
+    color: white;
+    text-align: center;
+}
+
+.caption {
+    color: black;
+    font-style: italic;
+}
+
+.card {
+    margin: 5;
+    color: white;
+    vertical-align: top;
+    background-color: #650100;
+    border-width: 1;
+    border-color: #8AC215;
+}
+
+.innerCard {
+    color: #650100;
+    vertical-align: top;
+    padding: 5;
+    background-color: white;
+}
+
+.banner {
+    background-color: #FACC45;
+    color: black;
+    font-weight: bold;
+    font-size: 20;
+    text-align: center;
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from "@angular/core";
+import { Component, NgZone } from "@angular/core";
 //import { RouterExtensions } from 'nativescript-angular';
 //import { TextField } from 'ui/text-field';
 import { EventData, Observable } from "data/observable";
@@ -25,7 +25,7 @@ import {
   MapboxViewApi,
   Viewport as MapboxViewport
 } from "nativescript-mapbox";
-import * as geolocation from "nativescript-geolocation";
+import { Location, getCurrentLocation, isEnabled, distance, enableLocationRequest } from "nativescript-geolocation";
 import { Accuracy } from "ui/enums";
 import * as appversion from "nativescript-appversion";
 import { Directions } from "nativescript-directions";
@@ -71,27 +71,12 @@ declare var UIBarMetrics: any;
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
   //origin: any;
   private mapbox: Mapbox;
-  private directions = new Directions();
-
-  //public startpointLongitude: number;
-  //public startpointLatitude: number;
-  public endpointLongitude: number;
-  public endpointLatitude: number;
-  public timestamp: string;
-
-  public horizontalAccuracy: number;
-  public verticalAccuracy: number;
-  public altitude: number;
-  public speed: number;
-
-  public position: Position[];
-
-  currentGeoLocation: any;
-
-  public photos: any[];
+  public startpointLongitude: number = 0.3281469;
+  public startpointLatitude: number = 32.5678254;
+ 
 
   constructor(
     private zone: NgZone,
@@ -100,67 +85,24 @@ export class HomeComponent implements OnInit {
     private googleService: GooglePlayService,
      private router: Router
   ) {
-    if (!geolocation.isEnabled()) {
-      geolocation.enableLocationRequest();
-    }
-   this.mapbox = new Mapbox();
+      this.getLocation();
+      this.mapbox = new Mapbox();
+
+     if (!isEnabled()) {
+       enableLocationRequest();
+     }
+ 
   }
-
-
-  ngOnInit() {
-    console.log("ngOnInit reached");
-
-    this._longitude = 32.5678254;
-    this._latitude = 0.3281469;
-
-    this.getLocation();
-  }
-
   
- //=========================== Start Properties =================================
- private _latitude: number;
- public get startpointLatitude(): number {
-   console.log("startpointLatitude get reached, and the value is :" + this._latitude);
-   return this._latitude;
- }
-
- public set startpointLatitude(value: number) {
-   console.log("startpointLatitude set reached, and the value is :" + value);
-   this._latitude = value;
- }
-
- private _longitude: number;
- public get startpointLongitude(): number {
-   console.log("startpointLongitude get reached, and the value is :" + this._longitude);
-   return this._longitude;
- }
-
- public set startpointLongitude(value: number) {
-   console.log("startpointLongitude set reached, and the value is :" + value);
-   this._longitude = value;
- }
-
-
- private _origin: string;
- public get Origin(): string {
-   console.log("Origin get reached, and the value is :" + this._origin);
-   return this._origin;
- }
-
- public set Origin(value: string) {
-   console.log("Origin set reached, and the value is :" + value);
-   this._origin = value;
- }
- //=========================== End Properties =================================
-
-  getLocation() {
-		geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, timeout: 8000 })
+   getLocation() {
+		getCurrentLocation({ desiredAccuracy: Accuracy.high, timeout: 8000 })
 			.then((location) => {
 				console.log("startpointLatitude received: " + location.latitude);
 				console.log("startpointLongitude received: " + location.longitude);
-				this._latitude = location.latitude;
-        this._longitude = location.longitude;
-
+				this.startpointLatitude = location.latitude;
+        this.startpointLongitude = location.longitude;
+        this.centerMap();
+        this.addMarkers();
 				this.getCurrentAddress();
 			}).catch((error) => {
         console.log("Location error received: " + error);
@@ -181,10 +123,7 @@ getCurrentAddress() {
   this.googleService
     .getCurrentLocation(this.startpointLatitude, this.startpointLongitude)
     .then(result => {
-      appSettings.setString("origin",  result);
-      this.centerMap();
-      this.addMarkers();
-
+      appSettings.setString("origin",  result);  
     })
     .catch(error => {
       console.log("Unable to get current address. Error occured!:", error);
@@ -208,14 +147,9 @@ addMarkers() {
     }
   ]);
 }
-onMapReady(args) {
-    this.mapbox = args.map;
-    this.addMarkers();
-    this.mapbox.setCenter({
-      lat: this.startpointLatitude,
-      lng: this.startpointLongitude,
-      animated: true
-  });  
-}
-
+ onMapReady(args) {
+     this.mapbox = args.map; 
+     this.addMarkers();
+     this.centerMap();
+    } 
 }

@@ -14,14 +14,6 @@ export class GeolocationService {
 
     ) { }
 
-    capitalize(text) {
-        return text.replace(/(?:^|\s)\S/g, (a) => {
-            return a.toUpperCase();
-        });
-    }
-
-
-
     public getLocation(): Promise<any> {
         return new Promise(
             (resolve, reject) => {
@@ -46,10 +38,8 @@ export class GeolocationService {
             (resolve, reject) => {
                 geolocation.getCurrentLocation({ timeout: 20000 })
                 .then(location => {
-
                     this.latitude = location.latitude;
                     this.longitude = location.longitude;
-
                     resolve();
                 })
                 .catch(error => {

@@ -1,19 +1,19 @@
 {
-  "_from": "nativescript-ngx-fonticon",
+  "_from": "nativescript-ngx-fonticon@^4.2.0",
   "_id": "nativescript-ngx-fonticon@4.2.0",
   "_inBundle": false,
   "_integrity": "sha512-lmNBF1nJHz3GT2moWdx3fw4Ye7AvRMFkhzeRtPSkP0tnY9JxKs9hCxfNVWC6cqfz3nvmgdwkf7t+jTTGWExbPQ==",
   "_location": "/nativescript-ngx-fonticon",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "nativescript-ngx-fonticon",
+    "raw": "nativescript-ngx-fonticon@^4.2.0",
     "name": "nativescript-ngx-fonticon",
     "escapedName": "nativescript-ngx-fonticon",
-    "rawSpec": "",
+    "rawSpec": "^4.2.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^4.2.0"
   },
   "_requiredBy": [
     "#USER",
@@ -21,7 +21,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/nativescript-ngx-fonticon/-/nativescript-ngx-fonticon-4.2.0.tgz",
   "_shasum": "0b09736b4d5ca69b68d91e07ff62390311553f2e",
-  "_spec": "nativescript-ngx-fonticon",
+  "_spec": "nativescript-ngx-fonticon@^4.2.0",
   "_where": "D:\\tmp\\keke",
   "author": {
     "name": "Nathan Walker",

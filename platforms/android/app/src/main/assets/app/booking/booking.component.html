@@ -1,32 +1,12 @@
-<ActionBar class="action-bar">
-    <StackLayout orientation="horizontal" ios:horizontalAlignment="center" android:horizontalAlignment="left">
-        <Label text="Tax Application" class="action-title"></Label>
-    </StackLayout>
-    <ActionItem (tap)="searchDestination()" ios.position="right">
-          <Button class="font-awesome action-item label" text="&#xf124;"></Button>
-    </ActionItem>
+<ActionBar title="Booking" icon="" class="action-bar">
+    <NavigationButton (tap)="onNavBtnTap()" text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
 
 
-
-
-
-<!--
-<AbsoluteLayout class="bottom-bar">
-		<Label top="100" text="How to position item at the bottom of the screen"></Label>
-		<Label top="125" text="while accounting for android soft nav bar"></Label>
-		<TextField top="400" text="{{ textFieldValue }}" hint="Enter text..."></TextField>
-		<StackLayout id="bottomBar" backgroundColor="blue" width="100%" height="50">
-			
-		</StackLayout>
-	</AbsoluteLayout>
-
--->
-
-   <ContentView id="map"  row="2" height="100%" width="100%" style="margin: 3; border-color: #fff">  
+<ContentView height="100%" width="100%" style="margin: 3; border-color: #fff">
 
     <Mapbox accessToken="pk.eyJ1IjoiYmVuYmF6dXMiLCJhIjoiY2pnMG56M2tzMDlrYjJxcXB0bm9lamZ6ZiJ9.ATP7qydQyn2B_yyAaiCxgg" mapStyle="traffic_day" latitude="50.467735" longitude="13.427718" hideCompass="true" zoomLevel="10" showUserLocation="false" disableZoom="false"
         disableRotation="false" disableScroll="false" disableTilt="false" (mapReady)="onMapReady($event)">
     </Mapbox>
-    <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="margin: 5; height: 40;" (tap)="onBookTap()"></Button>
+    <!-- <Button class="btn btn-primary btn-active" dock="bottom" text="Book" style="margin: 5; height: 40;" (tap)="onBookTap()"></Button> -->
 </ContentView>
